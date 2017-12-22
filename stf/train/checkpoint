@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/jasper/stf/train/model.ckpt-1979"
+all_model_checkpoint_paths: "/home/jasper/stf/train/model.ckpt-0"
+all_model_checkpoint_paths: "/home/jasper/stf/train/model.ckpt-523"
+all_model_checkpoint_paths: "/home/jasper/stf/train/model.ckpt-1005"
+all_model_checkpoint_paths: "/home/jasper/stf/train/model.ckpt-1492"
+all_model_checkpoint_paths: "/home/jasper/stf/train/model.ckpt-1979"
