@@ -10,10 +10,10 @@ This repository includes everything you need with preconfigured files and notebo
 
 This roughly follows several online tutorials which are good reference points, but each is missing some key details, especially on how to set up the dataset, which is the hard part.
 
-https://towardsdatascience.com/building-a-toy-detector-with-tensorflow-object-detection-api-63c0fdf2ac95
-https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9
-http://androidkt.com/train-object-detection/
-https://medium.com/@sshleifer/how-to-finetune-tensorflows-object-detection-models-on-kitti-self-driving-dataset-c8fcfe3258e9
+* https://towardsdatascience.com/building-a-toy-detector-with-tensorflow-object-detection-api-63c0fdf2ac95
+* https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9
+* http://androidkt.com/train-object-detection/
+* https://medium.com/@sshleifer/how-to-finetune-tensorflows-object-detection-models-on-kitti-self-driving-dataset-c8fcfe3258e9
 
 Two videos for the end to end training and detection process which show how to implement this tutorial:
 
@@ -24,11 +24,11 @@ PART 2: https://youtu.be/NsRbXZQQuN0
 ## Prereqs
 You must have:
 
-installed tensorflow (I have 1.4 installed locally using PIP although they suggest using a virtualenv). If you are doing this for the first time you will need cuda, Nvidia drivers which work, cudnn and a bunch of other packages, make sure to set up the paths in .bashrc properly, including the LD_LIBRARY_PATH and add the 'research' directory and 'research/slim' from the next step to your pythonpath.
-cloned and built the tensorflow/models/research folder into the tensorflow directory, you may not need to run the build files which are included with this. If you get script not found errors from the python commands then try running the various build scripts. (https://github.com/tensorflow/models/tree/master/research) 
-Jupyter notebook (pip install --user jupyter) 
-labelimg https://github.com/tzutalin/labelImg
-ImageMagick cli utilities
+* installed tensorflow (I have 1.4 installed locally using PIP although they suggest using a virtualenv). If you are doing this for the first time you will need cuda, Nvidia drivers which work, cudnn and a bunch of other packages, make sure to set up the paths in .bashrc properly, including the LD_LIBRARY_PATH and add the 'research' directory and 'research/slim' from the next step to your pythonpath.
+* cloned and built the tensorflow/models/research folder into the tensorflow directory, you may not need to run the build files which are included with this. If you get script not found errors from the python commands then try running the various build scripts. (https://github.com/tensorflow/models/tree/master/research) 
+* Jupyter notebook (pip install --user jupyter) 
+* labelimg https://github.com/tzutalin/labelImg
+* ImageMagick cli utilities
 
 ## Creating the Dataset and Training
 The goal is to take rgb images and create a dataset in the same format as Pascal VOC, this can then be used to create the 'pascal.record' TFRecord files which is used for training.
@@ -81,18 +81,12 @@ Important: LabelImg grabs the folder name when writing the xml files and this ne
 
 Run LabelImg. Download a release from https://tzutalin.github.io/labelImg/ then just extract it and run sudo ./labelImg (it segfaults without sudo)
 
-set autosave on
-
-set the load and save directories (save should be .../Annotations, load is .../JPEGImages)
-
-set the default classname to something easy to remember
-press d to move to the next image
-
-press w to add a box
-
-Label all examples of the relevant classes in the dataset
-
- 
+* set autosave on
+* set the load and save directories (save should be .../Annotations, load is .../JPEGImages)
+* set the default classname to something easy to remember
+* press d to move to the next image
+* press w to add a box
+* Label all examples of the relevant classes in the dataset
 
 From the Annotations dir run
 ~~~
@@ -110,7 +104,10 @@ The Pascal VOC type dataset should now be all created. If you messed up any of t
 
 Open bash in models/research and run the following command 'python object_detection/create_pascal_record.py -h' follow the help instructions to create a pascal.record and file from the dataset.
 
+~~~
 python object_detection/dataset_tools/create_pascal_tf_record.py -h
+~~~
+
 It should look something like this, stf here stands for serrated tussock full-size. You will need to create an output folder (anywhere you like), also use the --set=trainval option.
 
 ~~~
