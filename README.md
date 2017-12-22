@@ -1,6 +1,8 @@
 # FasterRCNNTutorial
 A FasterRCNN Tutorial in Tensorflow for beginners at object detection. Includes a very small dataset and screen recordings of the entire process.
 
+This tutorial covers the creation of a useful object detector for serrated tussock, a common weed in Australia.
+
 ## What is this?
 This is a tutorial for faster RCNN using tensorflow. It is largely based upon the several very good pages listed below, however they are all missing some small (and very frustrating) details about how to set up your own dataset with tensorflow. So this tutorial aims to document my experience with it and should help beginners get started (although not with installing it because that is well documented).
 
