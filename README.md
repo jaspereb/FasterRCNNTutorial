@@ -174,9 +174,9 @@ This means the smaller image length is made to be 600, if the larger side is sti
 
 It may be possible to train on larger images just by altering this config file, I have not tried it because anything larger will not fit on my 4GB laptop GPU (using faster_rcnn_resnet_101). Generally this image size is more than sufficient, consider whether you actually need larger images before attempting to change the network size.
 
-If you have very large images (eg the falcon8 which is 6000*4000), the best approach is to just crop them into tiles using imagemagick and train on each tile. FasterRcnn does not like objects smaller than about 30*30 pixels, so if your objects are less than this after resizing the images to be 600 or 1024 you will need to use more tiles. 
+If you have very large images (eg the falcon8 which is 6000x4000), the best approach is to just crop them into tiles using imagemagick and train on each tile. FasterRcnn does not like objects smaller than about 30*30 pixels, so if your objects are less than this after resizing the images to be 600 or 1024 you will need to use more tiles. 
 
-So for a 6000*4000 image with objects that are originally 100*100 pix, it would get resized to 900*600 and the objects would be 15*15pix. So you would need to split the original images into at least 4 tiles (of 3000*2000) then resize each tile to 900*600. More tiles would also work but you will have more objects on the edges of frames.
+So for a 6000x4000 image with objects that are originally 100x100 pix, it would get resized to 900*600 and the objects would be 15x15pix. So you would need to split the original images into at least 4 tiles (of 3000x2000) then resize each tile to 900x600. More tiles would also work but you will have more objects on the edges of frames.
 
 To make the above tile images run the following command (if not given a crop location than imagemagick will tile them). Then delete any offcuts which are created.
 
@@ -206,7 +206,7 @@ It doesn't work?
 If your object detection is not working at all there are a few things you may try:
 
 Check your pascal.record is not empty. TF will happily train on empty records without any errors.
-Are your objects >30*30 pixels?
+Are your objects >30x30 pixels?
 Test it on one of the training images, if it works here then your dataset may just be too hard for the amount of training data, although the usual culprit is an error in setting up your dataset files.
 A good way to learn tensorflow is https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0 which is also much faster to do and trains a classifier (rather than detector).
 If your object detection is working badly you may try:
