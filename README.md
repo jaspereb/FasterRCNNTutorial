@@ -6,7 +6,7 @@ This is a tutorial for faster RCNN using tensorflow. It is largely based upon th
 
 The end goal of this task is to detect various weeds using a ground robot owned by the Australian Centre for Field Robotics. Currently this tutorial only applies to single class models.
 
-This repository includes everything you need with preconfigured files and notebooks, except for the model which you need to download separately in step 11.
+This repository includes everything you need with preconfigured files and notebooks, except for the model which you need to download separately in step 11. The stf_demo.ipynb file needs to be placed in your .../models/research/object_detection directory.
 
 This roughly follows several online tutorials which are good reference points, but each is missing some key details, especially on how to set up the dataset, which is the hard part.
 
