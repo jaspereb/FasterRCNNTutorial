@@ -23,6 +23,9 @@ PART 1: https://youtu.be/9KmwZhTLV_s
 
 PART 2: https://youtu.be/NsRbXZQQuN0
 
+## About the ExpandedModel Folder
+This folder contains the dataset and config file for training on a much larger set of 66 images with around 20 objects per image. Due to the large size of the output graph, the trained model files are included as a release (v1.0). If you just want to test the model you will need to download and extract the output.tar.gz folder from the release, as well as having a copy of the ipython notebook included with tensorflow/models/research/object_detection (see prereqs). This folder and the release are not at all required to follow the tutorial.
+
 ## Prereqs
 You must have:
 
