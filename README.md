@@ -205,7 +205,10 @@ do
 convert $file -resize (Your X value)x600 $file
 done
 ~~~
- 
+Once your images are the correct size, you also need to configure the anchor sizes and aspect ratios in the .config file. The base anchor size is 255,255.
+
+The anchor ratios will multiply the x dimension and divide the y dimension, so if you have an aspect ratio of 0.5 your 255x255 anchor becomes 128x510. Each aspect ratio in the list is applied, then the results are multiplied by the scales. So the first step is to resize your images to the training/testing size, then manually check what the smallest and largest objects you expect are, and what the most extreme aspect ratios will be. Set up the config file with values that will cover these cases when the base anchor size is adjusted by the aspect ratios and multiplied by the scales.
+
 
 ## Which model do I use?
 Which model you grab is up to you. There is some guidance on the https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md page. I have used faster_rcnn_resnet_101_coco with no issues, you may need to alter the config files differently if using an alternate model. Out of the box, faster_rcnn_resnet_101 runs at around 0.5Hz on my laptop (GTX860M), with no optimisation.
