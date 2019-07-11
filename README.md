@@ -131,12 +131,12 @@ Download and extract a tensorflow model to use as the training checkpoint, see '
 Set up the model config file, this will be similar to 'faster_rcnn_resnet101_coco.config' which is in /models/research/object_detection/samples/configs'. Copy the relevant one for the model you are using and edit it. You will need to change approximately 5 directories, the rest should be set up correctly. 
 Once the two record files have been created check they are > 0 bytes. Then run the script (from .../models/research/) 'python object_detection/train.py -h' and follow the help instructions to train the model. Create an output folder (train_dir) for your model checkpoints to go in.
 ~~~
-python object_detection/train.py -h
+python object_detection/legacy/train.py -h
 ~~~
 
 It should look something like this. Also see 'Which model do I use?'
 ~~~
-python object_detection/train.py --train_dir=/home/jasper/stf/train --pipeline_config_path=/home/jasper/stf/faster_rcnn_resnet101_coco.config
+python object_detection/legacy/train.py --train_dir=/home/jasper/stf/train --pipeline_config_path=/home/jasper/stf/faster_rcnn_resnet101_coco.config
 ~~~
 
 You can open tensorboard at this point using the following. Generally if the loss in the bash output from the train.py script is dropping, then training is working fine. How long to train for is something you will need to experiment with. Training on 7 serrated tussock images was accurate after about an hour with loss around 0.02, many more images and a longer training time could improve the accuracy. (Click on the link that tensorboard creates to open it in a browser).
