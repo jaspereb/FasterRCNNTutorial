@@ -1,5 +1,8 @@
 ![example detection](media/1.jpg)
 
+# There's a better one!
+I've recently released a similar tutorial for the Retinanet architecture and recommend using that instead. It's a lot simpler and performs better than FasterRCNN. Check it out at https://github.com/jaspereb/Retinanet-Tutorial.
+
 # FasterRCNNTutorial
 A FasterRCNN Tutorial in Tensorflow for beginners at object detection. Includes a very small dataset and screen recordings of the entire process.
 
